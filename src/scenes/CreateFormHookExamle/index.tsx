@@ -21,10 +21,13 @@ export default function CreateFormHookExample(): ReactElement {
       }}
     >
       <h1>Personal Information</h1>
+
       {/* Components in `form.AppField` have access to the field context */}
       <form.AppField name="username" children={field => <field.TextField label="Full Name" />} />
       <form.AppField name="age" children={field => <field.NumberField label="Age" />} />
+
       <OtherFields form={form} title="Other Information" />
+
       {/* Components in `form.AppForm` have access to the form context */}
       <form.AppForm>
         <form.SubmitButton />

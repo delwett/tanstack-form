@@ -5,7 +5,8 @@ import { Item, Button } from './styles'
 
 type Person = { name: string; age: number }
 
-const defaultPerson: Person = { name: '', age: 0 }
+const defaultPerson: Person = { name: 'John Doe', age: 18 }
+const emptyPerson: Person = { name: '', age: 0 }
 
 export default function Arrays(): ReactElement {
   const form = useAppForm({
@@ -66,7 +67,7 @@ export default function Arrays(): ReactElement {
                 )
               })}
               <field.FieldInfo />
-              <Button onClick={() => field.pushValue(defaultPerson)} type="button">
+              <Button onClick={() => field.pushValue(emptyPerson)} type="button">
                 Add person
               </Button>
             </div>

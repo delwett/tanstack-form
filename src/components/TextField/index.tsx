@@ -11,8 +11,6 @@ export default function TextField(props: TextFieldProps): ReactElement {
 
   const field = useFieldContext<string>()
 
-  // console.log('rendered useFieldContext')
-
   return (
     <p>
       <label htmlFor={field.name}>{label}</label>

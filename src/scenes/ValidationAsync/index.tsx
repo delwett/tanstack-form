@@ -33,7 +33,7 @@ export default function ValidationAsync(): ReactElement {
           onChangeAsync: async ({ value }) => {
             console.log('onChangeAsync called')
             const currentAge = 7
-            return value < currentAge ? 'You can only increase the age' : undefined
+            return value < currentAge ? 'You can only increase the age (7)' : undefined
           },
         }}
         children={field => (

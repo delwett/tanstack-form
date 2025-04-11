@@ -1,6 +1,7 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { faker } from '@faker-js/faker'
-import { useForm } from '@tanstack/react-form'
-import { useCallback, useState } from 'react'
+import { useForm, useStore } from '@tanstack/react-form'
+import { useCallback, useEffect, useState } from 'react'
 import pSleep from '../../utils/pSleep'
 
 type Meta = { test: number }
@@ -22,11 +23,6 @@ export default function SimpleForm() {
     },
   })
 
-  // console.log(form)
-
-  // const additionalData = useStore(form.store, state => state.values.additionalData)
-  // console.log(additionalData)
-
   const handleModifyClick = useCallback(() => {
     setDefaultValues({
       firstName: faker.person.firstName(),
@@ -35,6 +31,19 @@ export default function SimpleForm() {
       },
     })
   }, [])
+
+  // console.log(form)
+
+  // const additionalData = useStore(form.store, state => state.values.additionalData)
+  // console.log(additionalData)
+
+  // const result = useStore(form.store, state => {
+  //   return {
+  //     firstName: state.values.firstName,
+  //     additionalDataIsBlurred: state.fieldMeta['additionalData.lastName']?.isBlurred,
+  //   }
+  // })
+  // console.log(result)
 
   // useEffect(() => {
   //   form.reset(defaultValues)

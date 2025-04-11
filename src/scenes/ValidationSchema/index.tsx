@@ -29,7 +29,7 @@ const ArkTypeSchema = arktype.type({
   lastName: 'string >= 3',
 })
 
-export default function ValidationAsync(): ReactElement {
+export default function ValidationSchema(): ReactElement {
   const form = useAppForm({
     defaultValues: {
       firstName: '',

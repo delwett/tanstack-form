@@ -51,7 +51,6 @@ export default function Listeners(): ReactElement {
       <form.AppField
         name="secondValue"
         listeners={{
-          // lets break it, but it doesn't trigger first listener
           onChange: ({ value }) => {
             console.log('Second value changed')
             form.setFieldValue('value', value * 2)

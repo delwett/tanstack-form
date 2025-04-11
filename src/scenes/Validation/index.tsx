@@ -7,18 +7,18 @@ export default function Validation(): ReactElement {
     defaultValues: {
       fullName: '',
     },
-    validators: {
-      onChange: ({ value }) => {
-        if (value.fullName.length < 5)
-          return {
-            form: 'Invalid data', // The `form` key is optional
-            fields: {
-              fullName: '[FORM] Name is too short',
-            },
-          }
-        return
-      },
-    },
+    // validators: {
+    //   onChange: ({ value }) => {
+    //     if (value.fullName.length < 5)
+    //       return {
+    //         form: 'Invalid data', // The `form` key is optional
+    //         fields: {
+    //           fullName: '[FORM] Name is too short (5)',
+    //         },
+    //       }
+    //     return
+    //   },
+    // },
     onSubmit: async ({ value }) => {
       await pSleep(1000)
       window.alert(JSON.stringify({ value }))
@@ -39,10 +39,10 @@ export default function Validation(): ReactElement {
       <form.AppField
         name="fullName"
         validators={{
-          onMount: ({ value }) => (value === '' ? "Hello, I'm mount error" : undefined),
-          onBlur: ({ value }) => (value === '' ? 'Name is required' : undefined),
-          onChange: ({ value }) => (value.length < 5 ? 'Name is too short' : undefined),
-          onSubmit: ({ value }) => (value === 'error' ? 'Invalid name' : undefined),
+          onMount: ({ value }) => (value === '' ? '[MOUNT] error' : undefined),
+          onBlur: ({ value }) => (value === '' ? '[BLUR] Name is required' : undefined),
+          onChange: ({ value }) => (value.length < 5 ? '[CHANGE] Name is too short (5)' : undefined),
+          onSubmit: ({ value }) => (value === 'error' ? '[SUBMIT] Invalid name' : undefined),
         }}
         children={field => (
           <>
